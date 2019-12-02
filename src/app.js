@@ -8,7 +8,7 @@ const dbUrl = "mongodb://tmdb:Tmdb@123%40ds351428.mlab.com:51428/tmdb";
 
 mongoose.connect(dbUrl, {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
+  // useUnifiedTopology: true,
   useCreateIndex: true
 });
 const PORT = process.env.PORT || 3000;
