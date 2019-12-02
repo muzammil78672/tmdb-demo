@@ -3,7 +3,7 @@ const app = express();
 var mongoose = require("mongoose");
 const cors = require("cors");
 
-const dbUrl = "mongodb://tmdb:Tmdb@123%40ds351428.mlab.com:51428/tmdb";
+const dbUrl = "mongodb://tmdb:Tmdb123@ds351428.mlab.com:51428/tmdb";
 // const dbUrl = "mongodb://localhost/tmdb";
 
 mongoose.connect(dbUrl, {
