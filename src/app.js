@@ -2,7 +2,11 @@ const express = require("express");
 const app = express();
 var mongoose = require("mongoose");
 const cors = require("cors");
-mongoose.connect("mongodb://localhost/tmdb", {
+
+const dbUrl = "mongodb://tmdb:Tmdb@123@ds351428.mlab.com:51428/tmdb";
+// const dbUrl = "mongodb://localhost/tmdb";
+
+mongoose.connect(dbUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true
