@@ -146,7 +146,8 @@ class Profile extends Component {
           }}>
           <Image
             style={{height: 80, width: 80, borderRadius: 40}}
-            source={{uri: Api.baseUrl + this.props.user.image}}
+            // source={{uri: Api.baseUrl + this.props.user.image}}
+            source={{uri: this.props.user.image}}
           />
           <View>
             <Text style={{fontSize: 18, fontWeight: 'bold'}}>
