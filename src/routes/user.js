@@ -6,24 +6,24 @@ const Helper = require("../common/helper");
 module.exports = app => {
   app.post("/register", async (req, res) => {
     try {
-      let image = req.body.profileImage,
-        imageBase64 = image.split(",")[1],
-        type = image.split(";")[0].split("/")[1],
-        imageLocation = "/media/" + uuid.v4() + "." + type;
+      // let image = req.body.profileImage,
+      //   imageBase64 = image.split(",")[1],
+      //   type = image.split(";")[0].split("/")[1],
+      //   imageLocation = "/media/" + uuid.v4() + "." + type;
 
-      fs.writeFile(
-        "." + imageLocation,
-        new Buffer.from(imageBase64, "base64"),
-        err => {
-          if (err) {
-            console.log(err);
-            return res.status(500).send({ message: "something went wrong" });
-          }
-        }
-      );
+      // fs.writeFile(
+      //   "." + imageLocation,
+      //   new Buffer.from(imageBase64, "base64"),
+      //   err => {
+      //     if (err) {
+      //       console.log(err);
+      //       return res.status(500).send({ message: "something went wrong" });
+      //     }
+      //   }
+      // );
 
-      req.body.image = imageLocation;
-      // req.body.image = req.body.profileImage;
+      // req.body.image = imageLocation;
+      req.body.image = req.body.profileImage;
 
       let user = await User.create(req.body),
         token = Helper.generateToken(user.id);
